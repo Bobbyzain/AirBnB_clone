@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """
-This contains both the example test and the unit test for project three of the Airbnb project
+This contains both the example test and the unit test for
+project three of the Airbnb project
 
 """
 import unittest
@@ -17,7 +18,9 @@ my_model_json = my_model.to_dict()
 print(my_model_json)
 print("JSON of my_model:")
 for key in my_model_json.keys():
-    print("\t{}: ({}) - {}".format(key, type(my_model_json[key]), my_model_json[key]))
+    v = my_model_json[key]
+    print("\t{}: ({}) - {}".format(key, type(my_model_json[key]), v))
+
 
 class TestBaseModel(unittest.TestCase):
     def test_init(self):
@@ -25,7 +28,7 @@ class TestBaseModel(unittest.TestCase):
         for testing the model's initialization procedures
         """
         my_model = BaseModel()
-        
+
         self.assertIsNotNone(my_model.id)
         self.assertIsNotNone(my_model.created_at)
         self.assertIsNotNone(my_model.updated_at)
@@ -48,11 +51,13 @@ class TestBaseModel(unittest.TestCase):
 
         my_model_dict = my_model.to_dict()
         self.assertIsInstance(my_model_dict, dict)
-        
+
         self.assertEqual(my_model_dict["__class__"], "BaseModel")
         self.assertEqual(my_model_dict["id"], my_model.id)
-        self.assertEqual(my_model_dict["created_at"], my_model.created_at.isoformat())
-        self.assertEqual(my_model_dict["updated_at"], my_model.updated_at.isoformat())
+        t = my_model.created_at.isoformat()
+        u = my_model.updated_at.isoformat()
+        self.assertEqual(my_model_dict["created_at"], t)
+        self.assertEqual(my_model_dict["updated_at"], u)
 
     def test_str(self):
         """
@@ -63,6 +68,7 @@ class TestBaseModel(unittest.TestCase):
         self.assertTrue(str(my_model).startswith("[BaseModel]"))
         self.assertIn(my_model.id, str(my_model))
         self.assertIn(str(my_model.__dict__), str(my_model))
+
 
 if __name__ == "__main__":
     unittest.main()

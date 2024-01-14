@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """
-This is the base model to our Airbnb console which will be designed to help with initialization, serialization and  deserialization of our future instances
+This is the base model to our Airbnb console which will be designed to help
+with initialization, serialization and  deserialization of our future instances
 """
 import uuid
 from datetime import datetime
@@ -12,7 +13,7 @@ class BaseModel:
         To initial the class
         """
         self.id = str(uuid.uuid4())
-        
+
         self.created_at = datetime.utcnow()
         self.updated_at = datetime.utcnow()
 
@@ -25,7 +26,8 @@ class BaseModel:
     def to_dict(self):
         """
         Return
-            instance_dict (dict): a dictionary  containing all keys/values of __dict__ of the instance
+            instance_dict (dict): a dictionary  containing all keys/values
+            of __dict__ of the instance
         """
         instance_dict = self.__dict__.copy()
         instance_dict["__class__"] = self.__class__.__name__
@@ -40,4 +42,3 @@ class BaseModel:
         """
         class_name = self.__class__.__name__
         return "[{}] ({}) {}".format(class_name, self.id, self.__dict__)
-
