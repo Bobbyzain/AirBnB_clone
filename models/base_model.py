@@ -8,14 +8,27 @@ from datetime import datetime
 
 
 class BaseModel:
-    def __init__(self):
+    def __init__(self, *args, **kwargs):
         """
         To initial the class
+        
+        Args:
+            args: refers to an unlimited number of args
+            kwargs: key word arguments used
         """
-        self.id = str(uuid.uuid4())
-
-        self.created_at = datetime.utcnow()
-        self.updated_at = datetime.utcnow()
+        time_fmt = "%Y-%m-%dT%H:%M:%S.%f"
+        if kwargs:
+            for key, value in kwargs.items():
+                if key == "__class__":
+                    continue
+                elif key == "created_at" or key == "updated_at":
+                    setattr(self, key, datetime.strptime(value, time_fmt))
+                else:
+                    setattr(self, key, value)
+        else:
+            self.id = str(uuid.uuid4())
+            self.created_at = datetime.utcnow()
+            self.updated_at = datetime.utcnow()
 
     def save(self):
         """
