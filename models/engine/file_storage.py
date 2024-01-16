@@ -16,7 +16,7 @@ class FileStorage:
 
     """
 
-    __file_path = "my_file.json"
+    __file_path = "file.json"
     __objects = {}  # the private dictionary
 
     def new(self, obj):
