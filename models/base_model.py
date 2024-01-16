@@ -5,13 +5,14 @@ with initialization, serialization and  deserialization of our future instances
 """
 import uuid
 from datetime import datetime
+import models
 
 
 class BaseModel:
     def __init__(self, *args, **kwargs):
         """
         To initial the class
-        
+
         Args:
             args: refers to an unlimited number of args
             kwargs: key word arguments used
@@ -30,11 +31,14 @@ class BaseModel:
             self.created_at = datetime.utcnow()
             self.updated_at = datetime.utcnow()
 
+        models.storage.new(self)
+
     def save(self):
         """
         To save the time and date the instance of the object was updated
         """
         self.updated_at = datetime.utcnow()
+        models.storage.save()
 
     def to_dict(self):
         """
