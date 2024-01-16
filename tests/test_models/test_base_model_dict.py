@@ -21,6 +21,15 @@ for key in my_model_json.keys():
     v = my_model_json[key]
     print("\t{}: ({}) - {}".format(key, type(my_model_json[key]), v))
 
+print("--")
+my_new_model = BaseModel(**my_model_json)
+print(my_new_model.id)
+print(my_new_model)
+print(type(my_new_model.created_at))
+
+print("--")
+print(my_model is my_new_model)
+
 
 class TestBaseModel(unittest.TestCase):
     def test_init(self):
