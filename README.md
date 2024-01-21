@@ -1,14 +1,13 @@
 # AirBnB_clone
-Welcome to the AirBnB clone project!
-Before starting, please read the AirBnB concept page.
 
-First step: Write a command interpreter to manage your AirBnB objects.
-This is the first step towards building your first full web application: the AirBnB clone. This first step is very important because you will use what you build during this project with all other following projects: HTML/CSS templating, database storage, API, front-end integration…
+Developing a foundation for a simplified AirBnB website, Holberton School's project begins with crafting a command-driven console. This console serves as the initial building block, enabling users to manage objects within the website's framework.
 
-Each task is linked and will help you to:
+Key functionalities of this console include:
 
-put in place a parent class (called BaseModel) to take care of the initialization, serialization and deserialization of your future instances
-create a simple flow of serialization/deserialization: Instance <-> Dictionary <-> JSON string <-> file
-create all classes used for AirBnB (User, State, City, Place…) that inherit from BaseModel
-create the first abstracted storage engine of the project: File storage.
-create all unittests to validate all our classes and storage engine
+Object Creation: Effortlessly bring new objects, such as Users or Places, into existence within the website.
+Object Retrieval: Seamlessly access and retrieve existing objects from various storage sources, including files and databases.
+Object Manipulation: Perform diverse operations on objects, such as counting, calculating statistics, or other necessary tasks.
+Object Modification: Adapt and update object attributes as needed, ensuring website content remains current and accurate.
+Object Deletion: Easily remove objects that are no longer relevant or required, maintaining a clean and organized website structure.
+This console establishes a robust foundation for subsequent project stages, ultimately aiming to deploy a functional AirBnB website replica.
+
