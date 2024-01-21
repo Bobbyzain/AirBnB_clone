@@ -17,13 +17,17 @@ Key functionalities of this console include:
 This console establishes a robust foundation for subsequent project stages, ultimately aiming to deploy a functional AirBnB website replica.
 
 
-**Examples of use**
 
+
+
+Examples of use <topic>
+========================================
 vagrantAirBnB_clone$./console.py
 (hbnb) help
 
-Documented commands (type help <topic>):
-========================================
+________________________________________
+Documented commands (type help):
+________________________________________
 EOF  all  create  destroy  help  quit  show  update
 
 (hbnb) all MyModel
@@ -38,4 +42,3 @@ EOF  all  create  destroy  help  quit  show  update
 (hbnb) show BaseModel 7da56403-cc45-4f1c-ad32-bfafeb2bb050
 ** no instance found **
 (hbnb) quit
-
