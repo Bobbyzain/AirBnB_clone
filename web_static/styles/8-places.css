@@ -82,3 +82,11 @@
 .places .user {
     margin: 10px auto;
 }
+
+.places .user p {
+    text-align: left;
+}
+
+.places .description p {
+    text-align: left;
+}
